@@ -1,7 +1,10 @@
+#!/usr/bin/python
+
 import websocket
 import notify2
 import json
 import time
+sleeptime = 13
 
 # initialize the notify2 library
 notify2.init("AnimeBytes Radio")
@@ -13,7 +16,7 @@ ws = websocket.WebSocketApp("wss://radio.animebits.moe/api/events/basic")
 def on_message(ws, message):
     data = json.loads(message)
     if data["type"] == "playing":
-        time.sleep(13)
+        time.sleep(sleeptime)
         title = data["data"]["title"]
         artist = data["data"]["artist"]
         n = notify2.Notification(summary="Now playing:", message=f"{artist} - {title}")
