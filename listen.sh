@@ -28,9 +28,7 @@ URL=https://radio.animebits.moe/stream/stream128.ogg
 
 [ "$APIKEY" = "" ] || APIKEY="?apikey=$APIKEY"
 curl -s ""$URL""$APIKEY"" | mpv --no-terminal - & export MPVPID=$!
-python notify.py 2> /dev/null & export PYPID=$!
-
-export killitall="printf gaming"
+abr-notify 2> /dev/null & export PYPID=$!
 
 notify-send "Run 'touch $FINISH' to turn off the radio."
 echo "$FINISH" | entr -pz kill $MPVPID $PYPID
