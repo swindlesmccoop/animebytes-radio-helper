@@ -3,13 +3,13 @@
 ## Usage
 
 ### Dependencies
-Python dependencies:
+#### Python dependencies:
 ```
 websocket, notify2, json, time
 ```
 All of these dependencies can be installed with pip.
 
-System dependencies:
+#### System dependencies:
 ```
 curl, entr, libnotify, mpv, python
 ```
